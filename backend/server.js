@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import cors from "cors";
+
 import cookieParser from "cookie-parser";
 import path from "path";
 import { connectDB } from "./lib/db.js";
@@ -16,12 +16,6 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://video-e.onrender.com",
-    credentials: true,
-  })
-);
 
 // Set up your authentication routes
 app.use("/api/auth", authRoutes);

@@ -3,9 +3,8 @@ import axios from "axios";
 // Create an Axios instance
 export const axiosInstance = axios.create({
   baseURL:
-    import.meta.mode === "development"
-      ? "https://video-e.onrender.com/api"
-      : "/api",
+    import.meta.mode === "development" ? "http://localhost:5000/api" : "/api",
+
   headers: {
     "Content-Type": "application/json", // Explicitly setting content type
   },
