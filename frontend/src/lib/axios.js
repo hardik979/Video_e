@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Create an Axios instance
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:5001/api", // Your base URL
+  baseURL:
+    import.meta.mode === "development" ? "http://localhost:5000/api" : "/api",
   headers: {
     "Content-Type": "application/json", // Explicitly setting content type
   },
